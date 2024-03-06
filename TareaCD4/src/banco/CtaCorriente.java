@@ -1,24 +1,47 @@
-package tareacd4;
+package banco;
 
-public class CC {
+public class CtaCorriente {
     public String nombre;
     public String cuenta;
     public double saldo;
     public double interes;
 
-    public CC()
+    
+    
+    
+    public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getCuenta() {
+		return cuenta;
+	}
+	public void setCuenta(String cuenta) {
+		this.cuenta = cuenta;
+	}
+	public double getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	public double getInteres() {
+		return interes;
+	}
+	public void setInteres(double interes) {
+		this.interes = interes;
+	}
+	public CtaCorriente()
     {
     }
-    public CC(String nombre, String cuenta, double saldo, double interes)
+    public CtaCorriente(String nombre, String cuenta, double saldo, double interes)
     {
         this.nombre = nombre;
         this.cuenta = cuenta;
         this.saldo = saldo;
         this.interes = interes;
-    }
-    public double estado()
-    {
-        return saldo;
     }
     public void ingresar(double cantidad) throws Exception
     {
@@ -31,7 +54,7 @@ public class CC {
     {
         if (cantidad <= 0)
             throw new Exception ("No se puede retirar una cantidad negativa");
-        if (estado()< cantidad)
+        if (saldo< cantidad)
             throw new Exception ("No se hay suficiente saldo");
         saldo = saldo - cantidad;
     }
